@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toys.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="result.js"></script>
+    <title>Toys Api</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light py-2 shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand myScale text-danger">TOYS API</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active myScale " href="index.html">Toys</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active myScale bg-danger-subtle" href="user.html">Users</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid pb-4">
+        <div class="container">
+            <h1 class="display-4 p-5 m-5 text-center bg-danger-subtle" style="font-size:100px;">Users</h1>
+            <div class="row mx-auto my-5 justify-content-between text-center">
+                <div class="col-lg-6">
+                    <h2 class="text-danger">User list</h2>
+                    <p><code class="bg-danger-subtle">GET:</code> Get list of all users - by token <b>admin</b> .</p>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/users/all" target="_blank">http://localhost:3002/users/all</a></code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="text-danger">My user info</h2>
+                    <p><code class="bg-danger-subtle">GET:</code> Get a list of all the toys, will present 10 results
+                        per page.</p>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/users/myInfo" target="_blank">http://localhost:3002/users/myInfo</a></code></pre>
+                </div>
+                <div class="col-lg-12 mx-auto my-5 py-3 text-center">
+                    <h2 class="text-danger">Delete user</h2>
+                    <p><code class="bg-danger-subtle">DELETE:</code> Delete a user from the data base. <b
+                            class="bg-danger-subtle"> Admin token can delete every user , and user can delete only
+                            himself.</b></p>
+                    <pre><code class="break-words">http://localhost:3002/user/{id}</code></pre>
+                </div>
+
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Add new user</h2>
+                    <p><code class="bg-danger-subtle">POST:</code> Add a new user to the data base, <b
+                            class="bg-danger-subtle"> You need a token for this query</b></p>
+                    <pre><code class="break-words">http://localhost:3002/user/</code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <pre class=" rounded-4 shadow"><code class="break-words">
+ {
+    "name": "jack black",
+    "email": "jack12@walla.com",
+    "pass":"123jack"
+}
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Update user</h2>
+                    <p><code class="bg-danger-subtle">PUT:</code> Update your user in the data base, <b
+                            class="bg-danger-subtle"> Admin token can edit every user data , and user can edit only
+                            himself.</b></p>
+                    <pre><code class="break-words">http://localhost:3002/user/{id}</code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <pre class=" rounded-4 shadow"><code class="break-words">
+{
+    "name": "jack black",
+    "email": "jack12@walla.com",
+    "pass":"123jack"
+}
+                    </code></pre>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

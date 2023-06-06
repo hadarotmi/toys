@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toys.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="result.js"></script>
+    <title>Toys Api</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light py-2 shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand myScale text-danger">TOYS API</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active myScale bg-danger-subtle" href="index.html">Toys</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active myScale " href="user.html">Users</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid pb-4">
+        <div class="container">
+            <h1 class="display-4 p-5 m-5 text-center bg-danger-subtle" style="font-size:100px;">Toys</h1>
+            <div class="information shadow py-1 mt-2">
+                <p class="mt-5 ps-3"><b>Some "GET" requests you can get information about the API, By adding these
+                        queries you can see the edit</b> </p>
+                <ul>
+                    <li><b>Per-Page :
+                        </b>you can select the amount of obj per one page.</li>
+                    <li><b>Page :
+                        </b>you can select the num of pages you want.
+                    </li>
+                </ul>
+            </div>
+            <div class="row mx-auto my-5 justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">All toys</h2>
+                    <p><code class="bg-danger-subtle">GET:</code> Get a list of all the toys, will present 10 results
+                        per page.</p>
+                    <p>10 toys on page 1:</p>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/all?page=1" target="_blank">http://localhost:3002/toys/all?page=1</a></code></pre>
+                    
+
+                    <p>30 toys on page :</p>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/all?perPage=30" target="_blank">http://localhost:3002/toys/all?perPage=30</a></code></pre>
+
+
+                </div>
+                <div id="allToys" class="col-lg-6"></div>
+            </div>
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Search by name/info</h2>
+                    <p><code class="bg-danger-subtle">GET:</code> search for a toy by searching follwing <b
+                            class="bg-danger-subtle">name or info</b> after the "s=", it will present 10 results per
+                        page.</p>
+                    <pre><code class="break-words">http://localhost:3002/toys/search?s={name or info}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/search?s=car" target="_blank">http://localhost:3002/toys/search?s=car</a></code></pre>
+                </div>
+                <div id="shearchName" class="col-lg-6"></div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Get by price</h2>
+                    <p><code class="bg-danger-subtle">GET:</code> Get a list of the toys by <b
+                            class="bg-danger-subtle">min & max</b> , it will present 10 results per page.</p>
+                    <pre><code class="break-words">http://localhost:3002/toys/price?min={min price}&max={max price}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/price?min=35&max=60" target="_blank">http://localhost:3002/toys/price?min=35&max=60</a></code></pre>
+                </div>
+                <div id="price" class="col-lg-6"></div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Get by gategory</h2>
+                    <p><code class="bg-danger-subtle">GET:</code> Get a list of all the toys in toys <b
+                            class="bg-danger-subtle">category</b> , it will present 10 results per page.</p>
+                    <pre><code class="break-words">http://localhost:3002/toys/category/{name category}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/category/strategy" target="_blank">http://localhost:3002/toys/category/strategy</a></code></pre>
+                </div>
+                <div id="category" class="col-lg-6"></div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Get by id</h2>
+                    <p><code class="bg-danger-subtle">GET:</code> Get the details of a toy by <b
+                            class="bg-danger-subtle">ID</b></p>
+                    <pre><code class="break-words">http://localhost:3002/toys/single/{id toy}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/single/647c38297bb0d9ed415e2922" target="_blank">http://localhost:3002/toys/single/647c38297bb0d9ed415e2922</a></code></pre>
+                </div>
+                <div id="singleId" class="col-lg-6"></div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Add new toys</h2>
+                    <p><code class="bg-danger-subtle">POST:</code> Add a new toy to the data base, <b
+                            class="bg-danger-subtle"> You need a token for this query</b></p>
+                    <pre><code class="break-words">http://localhost:3002/toys/</code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <pre class=" rounded-4 shadow"><code class="break-words">
+ {
+    "name":"lolo doll",
+    "info":"A funny doll that children love",
+    "category":"Doll",
+    "img_url":"lolo.jpg" ,
+    "price":40
+}
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Update toy</h2>
+                    <p><code class="bg-danger-subtle">PUT:</code> Update a toy in the data base, <b
+                            class="bg-danger-subtle"> You need a token for this query</b></p>
+                    <pre><code class="break-words">http://localhost:3002/toys/{id}</code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <pre class=" rounded-4 shadow"><code class="break-words">
+ {
+    "name":"lolo love doll",
+    "info":"A funny doll that children love",
+    "category":"Doll",
+    "img_url":"lolo.jpg" ,
+    "price":40
+}
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
+                    <h2 class="text-danger">Delete toy</h2>
+                    <p><code class="bg-danger-subtle">DELETE:</code> Delete a toy from the data base,<b
+                            class="bg-danger-subtle"> You need a token for this query</b></p>
+                    <pre><code class="break-words">http://localhost:3002/toys/{id}</code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <pre class=" rounded-4 shadow"><code class="break-words">
+ {
+    "msg": "The toy has been successfully deleted"
+}
+                    </code></pre>
+                </div>
+            </div>
+
+</body>
+
+</html>
