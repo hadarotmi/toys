@@ -35,7 +35,11 @@
 
     <main class="container-fluid pb-4">
         <div class="container">
-            <h1 class="display-4 p-5 m-5 text-center bg-danger-subtle" style="font-size:100px;">Toys</h1>
+            <div class="p-5 m-4 text-center bg-danger-subtle">
+                <h1 class="display-4" style="font-size:100px;">Toys </h1>
+                <p style="font-size: large;"> <ins class="text-danger">domain:</ins> https://toys-api-18bf.onrender.com/
+                </p>
+            </div>
             <div class="information shadow py-1 mt-2">
                 <p class="mt-5 ps-3"><b>Some "GET" requests you can get information about the API, By adding these
                         queries you can see the edit</b> </p>
@@ -112,8 +116,10 @@
                 <div class="col-lg-5">
                     <h2 class="text-danger">Add new toys</h2>
                     <p><code class="bg-danger-subtle">POST:</code> Add a new toy to the data base, <b
-                            class="bg-danger-subtle"> You need a token for this query</b>  
-                            <a class="text-decoration-none" href="https://github.com/hadarotmi/toys/blob/master/models/toysModel.js"> (if you want to see
+                            class="bg-danger-subtle"> You need a token for this query</b>
+                        <a target="_blank" class="text-decoration-none"
+                            href="https://github.com/hadarotmi/toys/blob/master/models/toysModel.js"> (if you want to
+                            see
                             the template of valid toy)</a>
                     </p>
                     <pre><code class="break-words">http://localhost:3002/toys/</code></pre>
@@ -166,7 +172,6 @@
                     </code></pre>
                 </div>
             </div>
-
 </body>
 
 </html>
