@@ -57,11 +57,11 @@
                     <p><code class="bg-danger-subtle">GET:</code> Get a list of all the toys, will present 10 results
                         per page.</p>
                     <p>10 toys on page 1:</p>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/all?page=1" target="_blank">http://localhost:3002/toys/all?page=1</a></code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/toys/all?page=1" target="_blank">/toys/all?page=1</a></code></pre>
 
 
                     <p>30 toys on page :</p>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/all?perPage=30" target="_blank">http://localhost:3002/toys/all?perPage=30</a></code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/toys/all?perPage=30" target="_blank">/toys/all?perPage=30</a></code></pre>
 
 
                 </div>
@@ -73,8 +73,8 @@
                     <p><code class="bg-danger-subtle">GET:</code> search for a toy by searching follwing <b
                             class="bg-danger-subtle">name or info</b> after the "s=", it will present 10 results per
                         page.</p>
-                    <pre><code class="break-words">http://localhost:3002/toys/search?s={name or info}</code></pre>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/search?s=car" target="_blank">http://localhost:3002/toys/search?s=car</a></code></pre>
+                    <pre><code class="break-words">/toys/search?s={name or info}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/toys/search?s=car" target="_blank">/toys/search?s=car</a></code></pre>
                 </div>
                 <div id="shearchName" class="col-lg-6"></div>
             </div>
@@ -84,8 +84,8 @@
                     <h2 class="text-danger">Get by price</h2>
                     <p><code class="bg-danger-subtle">GET:</code> Get a list of the toys by <b
                             class="bg-danger-subtle">min & max</b> , it will present 10 results per page.</p>
-                    <pre><code class="break-words">http://localhost:3002/toys/price?min={min price}&max={max price}</code></pre>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/price?min=35&max=60" target="_blank">http://localhost:3002/toys/price?min=35&max=60</a></code></pre>
+                    <pre><code class="break-words">/toys/price?min={min price}&max={max price}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/toys/price?min=35&max=60" target="_blank">/toys/price?min=35&max=60</a></code></pre>
                 </div>
                 <div id="price" class="col-lg-6"></div>
             </div>
@@ -95,8 +95,8 @@
                     <h2 class="text-danger">Get by gategory</h2>
                     <p><code class="bg-danger-subtle">GET:</code> Get a list of all the toys in toys <b
                             class="bg-danger-subtle">category</b> , it will present 10 results per page.</p>
-                    <pre><code class="break-words">http://localhost:3002/toys/category/{name category}</code></pre>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/category/strategy" target="_blank">http://localhost:3002/toys/category/strategy</a></code></pre>
+                    <pre><code class="break-words">/toys/category/{name category}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/toys/category/strategy" target="_blank">/toys/category/strategy</a></code></pre>
                 </div>
                 <div id="category" class="col-lg-6"></div>
             </div>
@@ -106,8 +106,8 @@
                     <h2 class="text-danger">Get by id</h2>
                     <p><code class="bg-danger-subtle">GET:</code> Get the details of a toy by <b
                             class="bg-danger-subtle">ID</b></p>
-                    <pre><code class="break-words">http://localhost:3002/toys/single/{id toy}</code></pre>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/toys/single/647c38297bb0d9ed415e2922" target="_blank">http://localhost:3002/toys/single/647c38297bb0d9ed415e2922</a></code></pre>
+                    <pre><code class="break-words">/toys/single/{id toy}</code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/toys/single/647c38297bb0d9ed415e2922" target="_blank">/toys/single/647c38297bb0d9ed415e2922</a></code></pre>
                 </div>
                 <div id="singleId" class="col-lg-6"></div>
             </div>
@@ -122,7 +122,7 @@
                             see
                             the template of valid toy)</a>
                     </p>
-                    <pre><code class="break-words">http://localhost:3002/toys/</code></pre>
+                    <pre><code class="break-words">/toys</code></pre>
                 </div>
                 <div class="col-lg-6">
                     <pre class=" rounded-4 shadow"><code class="break-words">
@@ -142,7 +142,7 @@
                     <h2 class="text-danger">Update toy</h2>
                     <p><code class="bg-danger-subtle">PUT:</code> Update a toy in the data base, <b
                             class="bg-danger-subtle"> You need a token for this query</b></p>
-                    <pre><code class="break-words">http://localhost:3002/toys/{id}</code></pre>
+                    <pre><code class="break-words">/toys/{id}</code></pre>
                 </div>
                 <div class="col-lg-6">
                     <pre class=" rounded-4 shadow"><code class="break-words">
@@ -162,7 +162,7 @@
                     <h2 class="text-danger">Delete toy</h2>
                     <p><code class="bg-danger-subtle">DELETE:</code> Delete a toy from the data base,<b
                             class="bg-danger-subtle"> You need a token for this query</b></p>
-                    <pre><code class="break-words">http://localhost:3002/toys/{id}</code></pre>
+                    <pre><code class="break-words">/toys/{id}</code></pre>
                 </div>
                 <div class="col-lg-6">
                     <pre class=" rounded-4 shadow"><code class="break-words">

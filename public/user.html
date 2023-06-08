@@ -42,20 +42,20 @@
                 <div class="col-lg-6">
                     <h2 class="text-danger">User list</h2>
                     <p><code class="bg-danger-subtle">GET:</code> Get list of all users - by token <b>admin</b> .</p>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/users/all" target="_blank">http://localhost:3002/users/all</a></code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/users/all" target="_blank">/users/all</a></code></pre>
                 </div>
                 <div class="col-lg-6">
                     <h2 class="text-danger">My user info</h2>
                     <p><code class="bg-danger-subtle">GET:</code> Get a list of all the toys, will present 10 results
                         per page.</p>
-                    <pre><code class="break-words"><a class="no-underline" href="http://localhost:3002/users/myInfo" target="_blank">http://localhost:3002/users/myInfo</a></code></pre>
+                    <pre><code class="break-words"><a class="no-underline" href="https://toys-api-18bf.onrender.com/users/myInfo" target="_blank">/users/myInfo</a></code></pre>
                 </div>
                 <div class="col-lg-12 mx-auto my-5 py-3 text-center">
                     <h2 class="text-danger">Delete user</h2>
                     <p><code class="bg-danger-subtle">DELETE:</code> Delete a user from the data base. <b
                             class="bg-danger-subtle"> Admin token can delete every user , and user can delete only
                             himself.</b></p>
-                    <pre><code class="break-words">http://localhost:3002/user/{id}</code></pre>
+                    <pre><code class="break-words">/users/{id}</code></pre>
                 </div>
 
             </div>
@@ -68,7 +68,7 @@
                             <a target="_blank" class="text-decoration-none" href="https://github.com/hadarotmi/toys/blob/master/models/userModel.js"> (if you want to see
                                 the template of valid user)</a>
                         </p>
-                    <pre><code class="break-words">http://localhost:3002/user/</code></pre>
+                    <pre><code class="break-words">/users</code></pre>
                 </div>
                 <div class="col-lg-6">
                     <pre class=" rounded-4 shadow"><code class="break-words">
@@ -83,11 +83,30 @@
 
             <div class="row mx-auto my-5 justify-content-between py-5">
                 <div class="col-lg-5">
+                    <h2 class="text-danger">Login user</h2>
+                    <p><code class="bg-danger-subtle">POST:</code> User login, if the email and password are correct the server will respond with a token,
+                           <br> <a target="_blank" class="text-decoration-none" href="https://github.com/hadarotmi/toys/blob/master/models/userModel.js"> (if you want to see
+                                the template of valid user)</a>
+                        </p>
+                    <pre><code class="break-words">/users/login</code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <pre class=" rounded-4 shadow"><code class="break-words">
+{
+    "email": "jack12@walla.com",
+    "password": "123jack"
+} 
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="row mx-auto my-5 justify-content-between py-5">
+                <div class="col-lg-5">
                     <h2 class="text-danger">Update user</h2>
                     <p><code class="bg-danger-subtle">PUT:</code> Update your user in the data base, <b
                             class="bg-danger-subtle"> Admin token can edit every user data , and user can edit only
                             himself.</b></p>
-                    <pre><code class="break-words">http://localhost:3002/user/{id}</code></pre>
+                    <pre><code class="break-words">/users/{id}</code></pre>
                 </div>
                 <div class="col-lg-6">
                     <pre class=" rounded-4 shadow"><code class="break-words">
